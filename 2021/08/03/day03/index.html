@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>day03 | Hexo</title><meta name="keywords" content="javase"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="#第四课总结： ##执行结构一般来说程序的结构有顺序结构、选择结构和循环结构3种，这三种不同的结构有一个共同的特点，他们只有一个入口，也只有一个出口。单一入出口让程序易读、易维护、易调试。 顺序结构：程序至上而下逐一执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾选择结构：选择结构就是根据条件的成立与否决定要执行哪些语句一种结构循环结构：循环结构就是根据判断条件的成立与否决定程序段落的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day03">
+<meta property="og:url" content="http://example.com/2021/08/03/day03/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="#第四课总结： ##执行结构一般来说程序的结构有顺序结构、选择结构和循环结构3种，这三种不同的结构有一个共同的特点，他们只有一个入口，也只有一个出口。单一入出口让程序易读、易维护、易调试。 顺序结构：程序至上而下逐一执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾选择结构：选择结构就是根据条件的成立与否决定要执行哪些语句一种结构循环结构：循环结构就是根据判断条件的成立与否决定程序段落的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-08-03T07:24:35.738Z">
+<meta property="article:modified_time" content="2021-08-03T07:24:35.954Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="javase">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/08/03/day03/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'day03',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-08-03 15:24:35'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">day03</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-08-03T07:24:35.738Z" title="Created 2021-08-03 15:24:35">2021-08-03</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-08-03T07:24:35.954Z" title="Updated 2021-08-03 15:24:35">2021-08-03</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="day03"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>#第四课总结：</p>
+<p>##执行结构<br>一般来说程序的结构有顺序结构、选择结构和循环结构3种，这三种不同的结构有一个共同的特点，他们只有一个入口，也只有一个出口。单一入出口让程序易读、易维护、易调试。</p>
+<p>顺序结构：程序至上而下逐一执行，一条语句执行完之后继续执行下一条语句，一直到程序的末尾<br>选择结构：选择结构就是根据条件的成立与否决定要执行哪些语句一种结构<br>循环结构：循环结构就是根据判断条件的成立与否决定程序段落的执行次数，这个程序段落就称为循环体</p>
+<p>##选择结构</p>
+<p>选择结构包括if、if…else及switch语句，程序加上选择结构后，就像增加了“十字路口”一样，根据不同的选择，程序的运行就会有不同结果。<br>if语句<br>if语句语法：<br>if(判断条件){<br>语句1；<br>……<br>}<br>如果在if语句主体中要处理的语句只有一个，则可省略左右大括号。当判断条件的值满足时（true），就会逐一执行大括号里面的语句。</p>
+<p>if语句的执行步骤： （1） 对表达式的结果进行判断 （2） 如果表达式结果为真，则执行语句 （3） 如果表达式结果为假，则跳过该语句 </p>
+<p><strong>if…else…语句</strong><br>语法结构：<br>if(判断条件){<br>语句主体1;<br>}else{<br>语句主体2;<br>}</p>
+<p>当程序中存在分支的判断语句时，就可以用if…else语句进行处理，当判断条件成立时，执行if语句主体，判断条件不成立时，执行else后面的语句主体。</p>
+<p><strong>if…else if…else语句</strong> 如果需要在if…else中判断多个条件时，使用if…else if…else语句，其语法： if(条件判断1){ 语句主体1; }else if(条件判断2){ 语句主体2; } …//多个else if()语句 else{语句主体3} </p>
+<p>###switch语句</p>
+<p>在众多的条件中找到并执行其中一个符合判断条件的语句时，除了使用if…else不断的判断外，还可以使用更方便的方式，即多重选择——switch语句。其语法格式：<br>switch(表达式){<br>case 选择值1: 语句主体1;<br>break;<br>case 选择值2: 语句主体2;<br>break;<br>……<br>case 选择值n:语句主体n;<br>break;<br>default : 语句主体;<br>}</p>
+<p>switch流程控制的执行步骤：<br>（一） switch语句先计算括号中的表达式，结果是数字、字符、枚举（JDK1.5之后）、字符串（JDK1.7之后）<br>（二） 根据表达式的值检测是否符合case后面的选择值，如果是case的选择值都不符合，则执行default所包含的语句，执行完毕即离开switch语句。<br>（三） 如果某个case的选择值符合表达式的结果，就会执行该case所包含的语句，一直到break语句后才离开switch语句。<br>（四） 若是没有在case语句之后加上break语句，则会一直执行到switch语句的尾部才离开switch语句。<br>（五） 若是没有定义default执行语句，则什么也不执行，直接退出switch语句。</p>
+<p>##循环结构</p>
+<p>循环语句功能<br>在循环条件满足的情况下，反复执行特定代码</p>
+<p>循环语句分类</p>
+<p>for 循环 </p>
+<p>while 循环</p>
+<p>do/while 循环</p>
+<p>while 循环<br>符合条件，循环继续执行；否则，循环退出特点：先判断，再执行</p>
+<p>do-while 循环<br>先执行一遍循环操作，符合条件，循环继续执行；否则，循环退出特点：先执行，再判断</p>
+<p>while 循环和 do-while 循环的区别？</p>
+<p>while:先判断条件，如果条件满足，再执行循环操作<br>do while:先执行一遍循环操作，然后再判读条件，如果条件满足，继续执行循环操作。</p>
+<p>for循环</p>
+<p>for(初始化参数;判断条件 ;更新循环变量){</p>
+<p> 循环体;</p>
+<p>}</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/08/03/day03/">http://example.com/2021/08/03/day03/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/javase/">javase</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/08/02/day02/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">day02</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/08/02/day02/" title="day02"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-02</div><div class="title">day02</div></div></a></div><div><a href="/2021/07/31/day01/" title="day01"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-07-31</div><div class="title">day01</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">5</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">1</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/08/03/day03/" title="day03"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="day03"/></a><div class="content"><a class="title" href="/2021/08/03/day03/" title="day03">day03</a><time datetime="2021-08-03T07:24:35.738Z" title="Created 2021-08-03 15:24:35">2021-08-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/02/day02/" title="day02"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="day02"/></a><div class="content"><a class="title" href="/2021/08/02/day02/" title="day02">day02</a><time datetime="2021-08-02T04:24:52.785Z" title="Created 2021-08-02 12:24:52">2021-08-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/31/day01/" title="day01"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="day01"/></a><div class="content"><a class="title" href="/2021/07/31/day01/" title="day01">day01</a><time datetime="2021-07-31T03:17:11.951Z" title="Created 2021-07-31 11:17:11">2021-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/29/samalin/" title="samalin"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="samalin"/></a><div class="content"><a class="title" href="/2021/07/29/samalin/" title="samalin">samalin</a><time datetime="2021-07-29T06:54:13.000Z" title="Created 2021-07-29 14:54:13">2021-07-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/07/29/hello-world/" title="Hello World"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2021/07/29/hello-world/" title="Hello World">Hello World</a><time datetime="2021-07-29T06:53:09.778Z" title="Created 2021-07-29 14:53:09">2021-07-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
